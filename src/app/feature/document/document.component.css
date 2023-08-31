@@ -1,0 +1,139 @@
+.container {
+  padding: 0.5em;
+}
+
+/* Card container */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  width: 100%;
+  height: 250px;
+  background-color: rgb(240, 240, 240);
+  border: 0.2em solid white;
+  border-radius: 0.6em;
+  box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.4);
+  padding: 0.7em;
+}
+
+/* Header container */
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 28px;
+  /* background-color: aquamarine; */
+  border-bottom: 1px solid black;
+  align-items: flex-end;
+}
+
+#date p {
+  font-size: 0.9em;
+  color: rgb(90, 90, 90);
+}
+
+#number-doc {
+  color: rgb(90, 90, 90);
+}
+
+#type-doc {
+  padding: 0 0.5em;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  border-top: 1px solid rgb(160, 159, 159);
+  border-left: 1px solid rgb(160, 159, 159);
+  border-right: 1px solid rgb(160, 159, 159);
+  background-color: antiquewhite;
+}
+
+/* Main container */
+
+.card-main {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0.5em;
+}
+
+/* Payment Mehtod */
+
+.payment-method {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  padding: 0.5em 0;
+}
+
+#sum-doc-dds {
+  text-align: end;
+}
+
+/* Receiver */
+
+.receiver {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 0.5em 0;
+  background-color: rgb(220, 220, 220);
+}
+
+.balance {
+  display: flex;
+  gap: 0.5em;
+}
+
+#old-balance,
+#new-balance {
+  text-align: center;
+  line-height: 1.4em;
+}
+
+#receiver-name {
+  width: 120px;
+  text-align: end;
+}
+
+/* Case */
+
+.case {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 0.5em 0;
+}
+
+#case-balance {
+  text-align: end;
+}
+
+/* Non Cash Payment */
+
+.non-cash-payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0;
+  background-color: rgb(220, 220, 220);
+}
+
+.non-cash-payment-method {
+  text-align: end;
+}
+
+/* Footer container */
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  /* background-color: aqua; */
+  border-top: 1px solid black;
+}
