@@ -1,0 +1,19 @@
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(27, 0, 87);
+  width: 40px;
+  height: 100vh;
+  color: white;
+  padding-top: 1em;
+}
+
+#menu-back a svg,
+#menu-settings a svg {
+  fill: white;
+  width: 1.8em;
+  height: auto;
+}

@@ -1,7 +1,52 @@
+<!-- <div class="mobile"> -->
 <div class="site">
-  <app-header></app-header>
+  <div class="nav-bar">
+    <app-side-bar></app-side-bar>
+  </div>
+  <div class="main-container">
+    <app-header></app-header>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+<!-- </div> -->
+
+<!-- <div class="site">
+  <div class="mobile">
+    <app-header></app-header>
+  </div>
+  <div class="desktop">
+    <div class="side-bar">
+      <app-side-bar></app-side-bar>
+    </div>
+  </div>
+  <div class="desktop header-desktop">
+    <app-header-desktop></app-header-desktop>
+  </div>
   <div class="main">
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
-</div>
+  <div class="desktop footer-desktop">
+    <app-footer-desktop></app-footer-desktop>
+  </div>
+  <div class="mobile">
+    <app-footer></app-footer>
+  </div>
+</div> -->
+
+<!-- <div class="desktop">
+  <div class="site">
+    <div class="side-bar">
+      <app-side-bar></app-side-bar>
+    </div>
+    <div class="main-section">
+      <app-header-desktop></app-header-desktop>
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer-desktop></app-footer-desktop>
+    </div>
+  </div>
+</div> -->

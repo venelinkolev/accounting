@@ -8,7 +8,12 @@ import { FeatureModule } from './feature/feature.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, FeatureModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CoreModule,
+    FeatureModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

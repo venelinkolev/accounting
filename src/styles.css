@@ -1,4 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+@media (width < 600px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+}
+
+@media (width >= 600px) {
+  .nav-mobile {
+    display: none;
+  }
+
+  .site {
+    display: flex;
+  }
+
+  .main-container {
+    flex: 1 0 auto;
+  }
+
+  .desktop-view {
+    display: block;
+  }
+
+  .mobile-view {
+    display: none;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -26,7 +63,7 @@ body {
   background-color: rgb(221, 218, 215);
 }
 
-.site {
+.main-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -35,6 +72,18 @@ body {
   justify-content: space-between;
 }
 
+/* .site {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: space-between;
+} */
+
 .main {
   flex: 1 0 auto;
 }
+
+/* .main-section {
+  display: flex;
+} */
