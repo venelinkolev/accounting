@@ -11,9 +11,20 @@
   padding-top: 1em;
 }
 
+#refresh a svg,
 #menu-back a svg,
 #menu-settings a svg {
   fill: white;
   width: 1.8em;
   height: auto;
+}
+
+#refresh a svg:hover,
+#menu-back a svg:hover,
+#menu-settings a svg:hover {
+  fill: orange;
+}
+
+#refresh {
+  margin-bottom: 3.5em;
 }

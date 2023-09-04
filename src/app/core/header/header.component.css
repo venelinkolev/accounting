@@ -19,6 +19,11 @@
   height: auto;
 }
 
+/* #menu-back a svg:hover,
+#menu-settings a svg:hover {
+  fill: orange;
+} */
+
 .reference-name-btns h1 {
   color: rgb(105, 105, 105);
 }
@@ -114,7 +119,7 @@
   background-color: rgb(190, 190, 190);
 }
 
-.filters-btn #horizont-line {
+.filters-btn #vertical-line {
   border: 1px solid gray;
   height: 2em;
 }

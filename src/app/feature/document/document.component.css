@@ -21,6 +21,7 @@
 /* Header container */
 
 .card-header {
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -52,8 +53,8 @@
 /* Main container */
 
 .card-main {
+  flex: 1 1 auto;
   display: flex;
-  flex: 1 0 auto;
   flex-direction: column;
   justify-content: space-between;
   /* padding: 0 0.5em; */
@@ -62,6 +63,7 @@
 /* Payment Mehtod */
 
 .payment-method {
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
   /* border-bottom: 1px solid gray; */
@@ -75,6 +77,7 @@
 /* Receiver */
 
 .receiver {
+  flex: 1 1 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -85,7 +88,9 @@
 }
 
 .balance {
+  flex: 1 1 auto;
   display: flex;
+  justify-content: center;
   gap: 0.5em;
 }
 
@@ -103,6 +108,7 @@
 /* Case */
 
 .case {
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,6 +123,7 @@
 /* Non Cash Payment */
 
 .non-cash-payment {
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -132,6 +139,7 @@
 /* Footer container */
 
 .card-footer {
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -148,4 +156,55 @@
 
 #name-operator {
   text-align: end;
+}
+
+/* DESKTOP VIEW */
+
+.table {
+  display: flex;
+  border-radius: 0.5em;
+  /* border: 2px solid white; */
+  padding: 0.4em;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.table table {
+  flex: 1 1 auto;
+  border-collapse: collapse;
+}
+
+.table table thead {
+  background-color: rgb(190, 190, 190);
+  border-bottom: 2px solid gray;
+}
+
+/* .table table thead th {
+  white-space: pre-wrap;
+} */
+
+th,
+td {
+  border: 1px solid rgb(129, 129, 129);
+  padding: 0.4em;
+  max-width: 130px;
+}
+
+.table table tbody tr:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+.table table tbody tr:hover {
+  background-color: rgba(255, 166, 0, 0.884);
+}
+
+.table table td {
+  border-style: none solid;
+}
+
+.table table tbody {
+  text-align: center;
+}
+
+.table table tr:last-child {
+  border-bottom: 2px solid gray;
 }
