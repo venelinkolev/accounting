@@ -6,23 +6,60 @@
   align-items: center;
   background-color: rgb(27, 0, 87);
   width: 40px;
-  height: 100vh;
+  height: 100%;
   color: white;
   padding-top: 1em;
 }
 
-#refresh a svg,
-#menu-back a svg,
-#menu-settings a svg {
+svg {
   fill: white;
   width: 1.8em;
   height: auto;
 }
 
-#refresh a svg:hover,
-#menu-back a svg:hover,
-#menu-settings a svg:hover {
+svg:hover {
+  cursor: pointer;
   fill: orange;
+}
+
+#accounting-reference {
+  width: 40px;
+  text-align: center;
+  position: relative;
+}
+
+#accounting-reference:hover .doc > ul {
+  display: block;
+}
+
+.doc {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1000;
+  background-color: rgb(27, 0, 87);
+}
+
+.doc ul {
+  display: none;
+}
+
+.doc ul li {
+  display: inline-block;
+  width: 200px;
+  padding: 0.8em 1em;
+}
+
+.doc ul li a {
+  color: white;
+  font-weight: 600;
+  /* font-style: italic; */
+  text-decoration: none;
+}
+
+.doc ul li:hover {
+  color: rgb(27, 0, 87);
+  background-color: orange;
 }
 
 #refresh {

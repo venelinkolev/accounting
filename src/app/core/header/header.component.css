@@ -155,7 +155,7 @@
     gap: 1em;
   }
 
-  #search {
+  .search {
     min-width: 230px;
   }
 }

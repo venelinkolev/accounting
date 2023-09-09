@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FeatureModule } from './feature/feature.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { FeatureModule } from './feature/feature.module';
     AppRoutingModule,
     CoreModule,
     FeatureModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

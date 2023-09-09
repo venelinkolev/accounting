@@ -10,7 +10,9 @@
   }
 
   .mobile-view {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
   }
 }
 
@@ -65,8 +67,9 @@ body {
 
 .main-container {
   display: flex;
+  /* flex: 1 1 auto; */
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   /* padding: 0 2em; */
   height: 100vh;
   justify-content: space-between;

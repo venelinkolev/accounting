@@ -1,10 +1,73 @@
-import { Component } from '@angular/core';
+import { Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { IUser, JsonHolderService } from 'src/app/services/json-holder.service';
 
 @Component({
   selector: 'app-document',
   templateUrl: './document.component.html',
-  styleUrls: ['./document.component.css']
+  styleUrls: ['./document.component.css'],
 })
-export class DocumentComponent {
+export class DocumentComponent implements OnInit, AfterViewInit {
+  userList: IUser[] = [];
+  currentList: IUser[] = [];
+  numberUsers: number = 0;
 
+  elementPerPage: number = 4;
+  startIndex: number = 0;
+
+  constructor(private userServices: JsonHolderService) {}
+
+  ngOnInit(): void {
+    this.userServices.getPost$().subscribe((list) => {
+      this.userList = list;
+      this.userServices.userHolder(list);
+
+      this.currentList = this.userList.slice(
+        this.startIndex,
+        this.startIndex + this.elementPerPage
+      );
+      // this.userList = list.slice(
+      //   this.startIndex,
+      //   this.startIndex + this.elementPerPage
+      // );
+      // console.log(this.userList);
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.userServices.pagenation$.subscribe((index) => {
+      this.startIndex = index;
+
+      console.log('1', this.startIndex);
+
+      this.currentList = this.userList.slice(
+        this.startIndex,
+        this.startIndex + this.elementPerPage
+      );
+
+      console.log('2', this.currentList);
+    });
+  }
+  // isView: boolean = false;
+  // table: HTMLElement | null;
+  // constructor(@Inject(DOCUMENT) document: Document) {
+  //   this.table = document.getElementById('main-table');
+  // }
+  // tableBody!: HTMLElement | null;
+  // row: NodeListOf<HTMLTableRowElement> | undefined;
+  // showContent(event: Event) {
+  //   const element = event;
+  //   console.log(element);
+  // }
+  // ngAfterViewInit(): void {
+  //   this.tableBody = document.getElementById('main-table-body');
+  //   // console.log(this.tableBody);
+  //   this.row = this.tableBody?.querySelectorAll('tr');
+  //   // console.log(this.row);
+  //   this.row?.forEach((element) => {
+  //     element.addEventListener('click', this.showContent);
+  //     // console.log(element);
+  //   });
+  // }
 }

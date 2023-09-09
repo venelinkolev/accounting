@@ -2,6 +2,12 @@
   padding: 0.5em;
 }
 
+/* .mobile-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+} */
+
 /* Card container */
 
 .card {
@@ -11,6 +17,7 @@
   /* justify-content: space-between; */
   width: 100%;
   height: auto;
+
   background-color: rgb(240, 240, 240);
   border: 0.2em solid white;
   border-radius: 0.6em;
@@ -171,6 +178,18 @@
 .table table {
   flex: 1 1 auto;
   border-collapse: collapse;
+  position: relative;
+}
+
+.table > table::after {
+  display: none;
+  background-color: rgba(220, 220, 220, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
 }
 
 .table table thead {
@@ -187,14 +206,32 @@ td {
   border: 1px solid rgb(129, 129, 129);
   padding: 0.4em;
   max-width: 130px;
+  overflow: hidden;
 }
 
 .table table tbody tr:nth-child(even) {
   background-color: rgb(240, 240, 240);
 }
 
-.table table tbody tr:hover {
+#main-table tbody > tr:hover {
   background-color: rgba(255, 166, 0, 0.884);
+}
+
+#main-table > tbody a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+#main-table tbody td:target + div {
+  display: flex;
+}
+#main-table tbody td:target {
+  display: none;
+}
+
+#main-table tbody > tr {
+  position: relative;
 }
 
 .table table td {
@@ -207,4 +244,33 @@ td {
 
 .table table tr:last-child {
   border-bottom: 2px solid gray;
+}
+
+.close-content {
+  flex: 1 1 auto;
+  margin-left: 0.5em;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div:target {
+  display: none;
+}
+
+.content {
+  display: none;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: flex-start;
+  background-color: rgb(220, 220, 220);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translate(-50%, -50%); */
+  z-index: 99;
+  transition: all 2s ease-in-out;
 }
