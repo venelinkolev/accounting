@@ -2,9 +2,14 @@
   <!-- MOBILE VIEW -->
 
   <div class="mobile-view">
-    <div class="card">
+    <div
+      *ngFor="let user of currentList"
+      #card
+      (click)="openContent($event)"
+      class="card"
+    >
       <header class="card-header">
-        <div id="date">
+        <div class="date">
           <p>
             <b
               >01.12.2023 г.<br />
@@ -12,395 +17,143 @@
             >
           </p>
         </div>
-        <div id="type-doc">
+        <div class="type-doc">
           <h3>Фактура</h3>
         </div>
-        <div id="number-doc">
+        <div class="number-doc">
           <p><b>№2300004558</b></p>
         </div>
       </header>
       <main class="card-main">
         <div class="payment-method">
-          <div id="payment-method">
+          <div class="payment-method-row">
             <label><i>Начин на плащане</i></label>
             <p><b>Брой</b></p>
           </div>
-          <div id="sum-doc-dds">
+          <div class="sum-doc-dds">
             <label><i>Сума на докимента /ДДС/</i></label>
             <p><b>1010,98 лв.</b></p>
           </div>
         </div>
         <div class="receiver">
-          <div id="receiver">
+          <div class="receiver-row">
             <p><i>Контрагент</i></p>
           </div>
           <div class="balance">
-            <div id="old-balance">
+            <div class="old-balance">
               <label><i>Старо салдо</i></label>
               <p><b>0,00 лв.</b></p>
             </div>
-            <div id="new-balance">
+            <div class="new-balance">
               <label><i>Ново сладо</i></label>
               <p><b>1110,00 лв.</b></p>
             </div>
           </div>
-          <div id="receiver-name">
+          <div class="receiver-name">
             <p><b>Съни Дайнинг 3 ЕООД</b></p>
           </div>
         </div>
         <div class="case">
-          <div id="case-name">
+          <div class="case-name">
             <p>Каса</p>
           </div>
-          <div id="case-balance">
+          <div class="case-balance">
             <p><i>Приход:</i> <b> 100,00 лв.</b></p>
             <p><i>Разход:</i> <b> 0.00 лв.</b></p>
           </div>
         </div>
         <div class="non-cash-payment">
-          <div id="non-cash-payment-name">
+          <div class="non-cash-payment-name">
             <p>Безналично плащане</p>
           </div>
           <div class="non-cash-payment-method">
-            <div id="non-cash-payment-method-name">
+            <div class="non-cash-payment-method-name">
               <p><i>Карта</i></p>
             </div>
-            <div id="non-cash-payment-sum">
+            <div class="non-cash-payment-sum">
               <p><b>100,00 лв.</b></p>
             </div>
           </div>
         </div>
       </main>
       <footer class="card-footer">
-        <div id="name-employer">
+        <div class="name-employer">
           <label><i>Касиер</i></label>
           <p>Венелин Колев</p>
         </div>
-        <div id="name-operator">
+        <div class="name-operator">
           <label><i>Оператор</i></label>
           <p>Венелин Колев</p>
         </div>
       </footer>
-    </div>
-    <div class="card">
-      <header class="card-header">
-        <div id="date">
-          <p>
-            <b
-              >01.12.2023 г.<br />
-              12:45:00 ч.</b
-            >
-          </p>
+      <div
+        class="content-mobile-none"
+        (click)="closeContent($event); $event.stopPropagation()"
+      >
+        <div class="hidden-content">
+          <h4>Съдържание</h4>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            />
+          </svg>
         </div>
-        <div id="type-doc">
-          <h3>Фактура</h3>
-        </div>
-        <div id="number-doc">
-          <p><b>№2300004558</b></p>
-        </div>
-      </header>
-      <main class="card-main">
-        <div class="payment-method">
-          <div id="payment-method">
-            <label><i>Начин на плащане</i></label>
-            <p><b>Брой</b></p>
-          </div>
-          <div id="sum-doc-dds">
-            <label><i>Сума на докимента /ДДС/</i></label>
-            <p><b>1010,98 лв.</b></p>
-          </div>
-        </div>
-        <div class="receiver">
-          <div id="receiver">
-            <p><i>Контрагент</i></p>
-          </div>
-          <div class="balance">
-            <div id="old-balance">
-              <label><i>Старо салдо</i></label>
-              <p><b>0,00 лв.</b></p>
-            </div>
-            <div id="new-balance">
-              <label><i>Ново сладо</i></label>
-              <p><b>1110,00 лв.</b></p>
-            </div>
-          </div>
-          <div id="receiver-name">
-            <p><b>Съни Дайнинг 3 ЕООД</b></p>
-          </div>
-        </div>
-        <div class="case">
-          <div id="case-name">
-            <p>Каса</p>
-          </div>
-          <div id="case-balance">
-            <p><i>Приход:</i> <b> 100,00 лв.</b></p>
-            <p><i>Разход:</i> <b> 0.00 лв.</b></p>
-          </div>
-        </div>
-        <div class="non-cash-payment">
-          <div id="non-cash-payment-name">
-            <p>Безналично плащане</p>
-          </div>
-          <div class="non-cash-payment-method">
-            <div id="non-cash-payment-method-name">
-              <p><i>Карта</i></p>
-            </div>
-            <div id="non-cash-payment-sum">
-              <p><b>100,00 лв.</b></p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <footer class="card-footer">
-        <div id="name-employer">
-          <label><i>Касиер</i></label>
-          <p>Венелин Колев</p>
-        </div>
-        <div id="name-operator">
-          <label><i>Оператор</i></label>
-          <p>Венелин Колев</p>
-        </div>
-      </footer>
-    </div>
-    <div class="card">
-      <header class="card-header">
-        <div id="date">
-          <p>
-            <b
-              >01.12.2023 г.<br />
-              12:45:00 ч.</b
-            >
-          </p>
-        </div>
-        <div id="type-doc">
-          <h3>Фактура</h3>
-        </div>
-        <div id="number-doc">
-          <p><b>№2300004558</b></p>
-        </div>
-      </header>
-      <main class="card-main">
-        <div class="payment-method">
-          <div id="payment-method">
-            <label><i>Начин на плащане</i></label>
-            <p><b>Брой</b></p>
-          </div>
-          <div id="sum-doc-dds">
-            <label><i>Сума на докимента /ДДС/</i></label>
-            <p><b>1010,98 лв.</b></p>
-          </div>
-        </div>
-        <div class="receiver">
-          <div id="receiver">
-            <p><i>Контрагент</i></p>
-          </div>
-          <div class="balance">
-            <div id="old-balance">
-              <label><i>Старо салдо</i></label>
-              <p><b>0,00 лв.</b></p>
-            </div>
-            <div id="new-balance">
-              <label><i>Ново сладо</i></label>
-              <p><b>1110,00 лв.</b></p>
-            </div>
-          </div>
-          <div id="receiver-name">
-            <p><b>Съни Дайнинг 3 ЕООД</b></p>
-          </div>
-        </div>
-        <div class="case">
-          <div id="case-name">
-            <p>Каса</p>
-          </div>
-          <div id="case-balance">
-            <p><i>Приход:</i> <b> 100,00 лв.</b></p>
-            <p><i>Разход:</i> <b> 0.00 лв.</b></p>
-          </div>
-        </div>
-        <div class="non-cash-payment">
-          <div id="non-cash-payment-name">
-            <p>Безналично плащане</p>
-          </div>
-          <div class="non-cash-payment-method">
-            <div id="non-cash-payment-method-name">
-              <p><i>Карта</i></p>
-            </div>
-            <div id="non-cash-payment-sum">
-              <p><b>100,00 лв.</b></p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <footer class="card-footer">
-        <div id="name-employer">
-          <label><i>Касиер</i></label>
-          <p>Венелин Колев</p>
-        </div>
-        <div id="name-operator">
-          <label><i>Оператор</i></label>
-          <p>Венелин Колев</p>
-        </div>
-      </footer>
-    </div>
-    <div class="card">
-      <header class="card-header">
-        <div id="date">
-          <p>
-            <b
-              >01.12.2023 г.<br />
-              12:45:00 ч.</b
-            >
-          </p>
-        </div>
-        <div id="type-doc">
-          <h3>Фактура</h3>
-        </div>
-        <div id="number-doc">
-          <p><b>№2300004558</b></p>
-        </div>
-      </header>
-      <main class="card-main">
-        <div class="payment-method">
-          <div id="payment-method">
-            <label><i>Начин на плащане</i></label>
-            <p><b>Брой</b></p>
-          </div>
-          <div id="sum-doc-dds">
-            <label><i>Сума на докимента /ДДС/</i></label>
-            <p><b>1010,98 лв.</b></p>
-          </div>
-        </div>
-        <div class="receiver">
-          <div id="receiver">
-            <p><i>Контрагент</i></p>
-          </div>
-          <div class="balance">
-            <div id="old-balance">
-              <label><i>Старо салдо</i></label>
-              <p><b>0,00 лв.</b></p>
-            </div>
-            <div id="new-balance">
-              <label><i>Ново сладо</i></label>
-              <p><b>1110,00 лв.</b></p>
-            </div>
-          </div>
-          <div id="receiver-name">
-            <p><b>Съни Дайнинг 3 ЕООД</b></p>
-          </div>
-        </div>
-        <div class="case">
-          <div id="case-name">
-            <p>Каса</p>
-          </div>
-          <div id="case-balance">
-            <p><i>Приход:</i> <b> 100,00 лв.</b></p>
-            <p><i>Разход:</i> <b> 0.00 лв.</b></p>
-          </div>
-        </div>
-        <div class="non-cash-payment">
-          <div id="non-cash-payment-name">
-            <p>Безналично плащане</p>
-          </div>
-          <div class="non-cash-payment-method">
-            <div id="non-cash-payment-method-name">
-              <p><i>Карта</i></p>
-            </div>
-            <div id="non-cash-payment-sum">
-              <p><b>100,00 лв.</b></p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <footer class="card-footer">
-        <div id="name-employer">
-          <label><i>Касиер</i></label>
-          <p>Венелин Колев</p>
-        </div>
-        <div id="name-operator">
-          <label><i>Оператор</i></label>
-          <p>Венелин Колев</p>
-        </div>
-      </footer>
-    </div>
-    <div class="card">
-      <header class="card-header">
-        <div id="date">
-          <p>
-            <b
-              >01.12.2023 г.<br />
-              12:45:00 ч.</b
-            >
-          </p>
-        </div>
-        <div id="type-doc">
-          <h3>Фактура</h3>
-        </div>
-        <div id="number-doc">
-          <p><b>№2300004558</b></p>
-        </div>
-      </header>
-      <main class="card-main">
-        <div class="payment-method">
-          <div id="payment-method">
-            <label><i>Начин на плащане</i></label>
-            <p><b>Брой</b></p>
-          </div>
-          <div id="sum-doc-dds">
-            <label><i>Сума на докимента /ДДС/</i></label>
-            <p><b>1010,98 лв.</b></p>
-          </div>
-        </div>
-        <div class="receiver">
-          <div id="receiver">
-            <p><i>Контрагент</i></p>
-          </div>
-          <div class="balance">
-            <div id="old-balance">
-              <label><i>Старо салдо</i></label>
-              <p><b>0,00 лв.</b></p>
-            </div>
-            <div id="new-balance">
-              <label><i>Ново сладо</i></label>
-              <p><b>1110,00 лв.</b></p>
-            </div>
-          </div>
-          <div id="receiver-name">
-            <p><b>Съни Дайнинг 3 ЕООД</b></p>
-          </div>
-        </div>
-        <div class="case">
-          <div id="case-name">
-            <p>Каса</p>
-          </div>
-          <div id="case-balance">
-            <p><i>Приход:</i> <b> 100,00 лв.</b></p>
-            <p><i>Разход:</i> <b> 0.00 лв.</b></p>
-          </div>
-        </div>
-        <div class="non-cash-payment">
-          <div id="non-cash-payment-name">
-            <p>Безналично плащане</p>
-          </div>
-          <div class="non-cash-payment-method">
-            <div id="non-cash-payment-method-name">
-              <p><i>Карта</i></p>
-            </div>
-            <div id="non-cash-payment-sum">
-              <p><b>100,00 лв.</b></p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <footer class="card-footer">
-        <div id="name-employer">
-          <label><i>Касиер</i></label>
-          <p>Венелин Колев</p>
-        </div>
-        <div id="name-operator">
-          <label><i>Оператор</i></label>
-          <p>Венелин Колев</p>
-        </div>
-      </footer>
+        <table>
+          <thead>
+            <tr>
+              <th>Име на стоката</th>
+              <th>К-во</th>
+              <th>Цена</th>
+              <th>Сума</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {{ user.address.city }}
+              </td>
+              <td>
+                {{ user.address.zipcode }}
+              </td>
+              <td>
+                {{ user.address.street }}
+              </td>
+              <td>
+                {{ user.address.suite }}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {{ user.address.city }}
+              </td>
+              <td>
+                {{ user.address.zipcode }}
+              </td>
+              <td>
+                {{ user.address.street }}
+              </td>
+              <td>
+                {{ user.address.suite }}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                {{ user.address.city }}
+              </td>
+              <td>
+                {{ user.address.zipcode }}
+              </td>
+              <td>
+                {{ user.address.street }}
+              </td>
+              <td>
+                {{ user.address.suite }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -408,7 +161,7 @@
 
   <div class="desktop-view">
     <div class="table">
-      <table id="main-table">
+      <table class="main-table">
         <thead>
           <tr>
             <th rowspan="2">Съдържание</th>
@@ -433,7 +186,7 @@
             <th>Ново салдо</th>
           </tr>
         </thead>
-        <tbody id="main-table-body">
+        <tbody class="main-table-body">
           <!-- <tr>
             <td id="1"><a href="#1">+</a></td>
             <div id="2300004544" class="content">

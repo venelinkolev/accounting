@@ -1,4 +1,10 @@
-import { Inject } from '@angular/core';
+import {
+  ElementRef,
+  EventEmitter,
+  Inject,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { IUser, JsonHolderService } from 'src/app/services/json-holder.service';
@@ -9,6 +15,9 @@ import { IUser, JsonHolderService } from 'src/app/services/json-holder.service';
   styleUrls: ['./document.component.css'],
 })
 export class DocumentComponent implements OnInit, AfterViewInit {
+  @ViewChild('card') card!: ElementRef;
+  // @Output() clickCard = new EventEmitter();
+
   userList: IUser[] = [];
   currentList: IUser[] = [];
   numberUsers: number = 0;
@@ -48,6 +57,23 @@ export class DocumentComponent implements OnInit, AfterViewInit {
 
       console.log('2', this.currentList);
     });
+
+    // this.card.nativeElement.classList.add();
+    // console.log(this.card);
+  }
+
+  closeContent(event: any): void {
+    console.log(event);
+  }
+
+  openContent(event: any): void {
+    console.log(event);
+    console.log(this.card);
+    // this.card.nativeElement.childNodes[3].classList.add('redClass');
+    event.target.offsetParent.children[3].classList.remove(
+      'content-mobile-none'
+    );
+    event.target.offsetParent.children[3].classList.add('content-mobile');
   }
   // isView: boolean = false;
   // table: HTMLElement | null;

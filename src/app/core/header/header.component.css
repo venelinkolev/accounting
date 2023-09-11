@@ -87,7 +87,7 @@
   background-color: rgb(190, 190, 190);
 }
 
-#search {
+.search {
   flex: 1 1 auto;
   padding: 0.4em;
   height: 2.5em;
