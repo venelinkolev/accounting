@@ -63,12 +63,30 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   }
 
   closeContent(event: any): void {
-    console.log(event);
+    const targetElement: Element = event.target;
+    // console.log(targetElement);
+    // console.log(event.target.parentElement.offsetParent.classList);
+
+    if (targetElement.nodeName === 'path') {
+      targetElement.parentElement?.parentElement?.parentElement?.classList.add(
+        'content-mobile-none'
+      );
+      targetElement.parentElement?.parentElement?.parentElement?.classList.remove(
+        'content-mobile'
+      );
+    } else if (targetElement.nodeName === 'svg') {
+      targetElement.parentElement?.parentElement?.classList.add(
+        'content-mobile-none'
+      );
+      targetElement.parentElement?.parentElement?.classList.remove(
+        'content-mobile'
+      );
+    }
   }
 
   openContent(event: any): void {
-    console.log(event);
-    console.log(this.card);
+    // console.log(event);
+    // console.log(this.card);
     // this.card.nativeElement.childNodes[3].classList.add('redClass');
     event.target.offsetParent.children[3].classList.remove(
       'content-mobile-none'

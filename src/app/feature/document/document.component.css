@@ -181,10 +181,11 @@
   flex-direction: column;
   flex: 1 1 auto;
   width: 330px;
-  height: auto;
-  padding: 0.5em;
+  height: 230px;
+  overflow: scroll;
+  padding: 0 0.5em 0.5em 0.5em;
   background-color: white;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 0.5em;
   border: 2px solid rgb(240, 240, 240);
   box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.4);
@@ -208,14 +209,18 @@
   background-color: rgb(240, 240, 240);
 }
 
-.hidden-content {
+.header-content {
   display: flex;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
+  padding-top: 0.5em;
+  background-color: white;
   border-bottom: 1px solid gray;
   margin-bottom: 0.3em;
 }
 
-.hidden-content h4 {
+.header-content h4 {
   font-style: italic;
 }
 
@@ -225,10 +230,10 @@ svg {
   height: auto;
 }
 
-svg:hover {
+/* svg:hover {
   cursor: pointer;
   fill: orange;
-}
+} */
 
 /* DESKTOP VIEW */
 
