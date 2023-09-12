@@ -48,14 +48,14 @@ export class DocumentComponent implements OnInit, AfterViewInit {
     this.userServices.pagenation$.subscribe((index) => {
       this.startIndex = index;
 
-      console.log('1', this.startIndex);
+      // console.log('1', this.startIndex);
 
       this.currentList = this.userList.slice(
         this.startIndex,
         this.startIndex + this.elementPerPage
       );
 
-      console.log('2', this.currentList);
+      // console.log('2', this.currentList);
     });
 
     // this.card.nativeElement.classList.add();

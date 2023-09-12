@@ -283,7 +283,7 @@ td {
   background-color: rgb(240, 240, 240);
 }
 
-.main-table tbody > tr:hover {
+.table table tbody > tr:hover {
   background-color: rgba(255, 166, 0, 0.884);
 }
 
