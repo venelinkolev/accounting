@@ -18,12 +18,30 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   @ViewChild('card') card!: ElementRef;
   // @Output() clickCard = new EventEmitter();
 
+  dataSource = [];
+
   userList: IUser[] = [];
   currentList: IUser[] = [];
   numberUsers: number = 0;
 
   elementPerPage: number = 4;
   startIndex: number = 0;
+
+  displayedColumns: string[] = [
+    'position',
+    'dateOfSave',
+    'numberOfDocument',
+    'documentType',
+    'sumDocument',
+    'case',
+    'caseOwner',
+    'nonCashPayment',
+    'paymentMethod',
+    'receiver',
+    'nameOperator',
+    'checked',
+    'note',
+  ];
 
   constructor(private userServices: JsonHolderService) {}
 

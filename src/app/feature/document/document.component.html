@@ -258,251 +258,125 @@
   <!-- DESKTOP VIEW -->
 
   <div class="desktop-view">
-    <div class="table">
-      <table class="main-table">
-        <thead>
-          <tr>
-            <th rowspan="2">Съдържание</th>
-            <th rowspan="2">Дата на запис</th>
-            <th rowspan="2">№ на документ</th>
-            <th rowspan="2">Тип на документ</th>
-            <th rowspan="2">Суми към документ/с ДДС/</th>
-            <th colspan="2">Каса</th>
-            <th rowspan="2">Касиер</th>
-            <th rowspan="2">Безналично плащане</th>
-            <th rowspan="2">Начин на плащане</th>
-            <th colspan="3">Контрагент</th>
-            <th rowspan="2">Оператор</th>
-            <th rowspan="2">Проверил</th>
-            <th rowspan="2">Забележка</th>
-          </tr>
-          <tr>
-            <th>Приход</th>
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 main-table"
+    >
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">№</th>
+        <td mat-cell *matCellDef="let document">1</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateOfSave">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Дата на запис</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="numberOfDocument">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">№ на документ</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="documentType">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Тип на документа</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="sumDocument">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">
+          Суми към документ/с ДДС/
+        </th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="case">
+        <th mat-header-cell *matHeaderCellDef colspan="2">Каса</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="caseOwner">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Касиер</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="nonCashPayment">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">
+          Безналично плащане
+        </th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="paymentMethod">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Начин на плащане</th>
+        <td mat-cell *matCollmnDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="receiver">
+        <th mat-header-cell *matHeaderCellDef colspan="3">Контрагент</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="nameOperator">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Оператор</th>
+        <td mat-cell *matCellmnDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="checked">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Проверил</th>
+        <td mat-cell *matCellumnDef="let document"></td>
+      </ng-container>
+
+      <ng-container matColumnDef="note">
+        <th mat-header-cell *matHeaderCellDef rowspan="2">Забележка</th>
+        <td mat-cell *matCellumnDef="let document"></td>
+      </ng-container>
+
+      <!--  <th>Приход</th>
             <th>Разход</th>
             <th>Име</th>
             <th>Старо салдо</th>
-            <th>Ново салдо</th>
-          </tr>
-        </thead>
-        <tbody class="main-table-body">
-          <!-- <tr>
-            <td id="1"><a href="#1">+</a></td>
-            <div id="2300004544" class="content">
-              <div class="close-content">
-                <p><a href="#2300004544">-</a></p>
-              </div>
-              <div class="table-content">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Име на стоката</th>
-                      <th>К-во</th>
-                      <th>Цена</th>
-                      <th>Сума</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Компютър</td>
-                      <td>1</td>
-                      <td>850 лв.</td>
-                      <td>850 лв.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <td>01.12.2023г. 15:44ч.</td>
-            <td>2300004544</td>
-            <td>Фактура</td>
-            <td>1001,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>1001,00 лв.</td>
-            <td>Венелин Колев</td>
-            <td>0,00 лв.</td>
-            <td>Брой</td>
-            <td>Съни Дайнинг 3 ЕООД</td>
-            <td>0,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>Венелин Колев</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td id="2"><a href="#2">+</a></td>
-            <div id="2300004545" class="content">
-              <div class="close-content">
-                <p><a href="#2300004545">-</a></p>
-              </div>
-              <div class="table-content">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Име на стоката</th>
-                      <th>К-во</th>
-                      <th>Цена</th>
-                      <th>Сума</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Компютър</td>
-                      <td>1</td>
-                      <td>850 лв.</td>
-                      <td>850 лв.</td>
-                    </tr>
-                    <tr>
-                      <td>Монитор 15'</td>
-                      <td>2</td>
-                      <td>450 лв.</td>
-                      <td>900 лв.</td>
-                    </tr>
-                    <tr>
-                      <td>Компютър</td>
-                      <td>1</td>
-                      <td>850 лв.</td>
-                      <td>850 лв.</td>
-                    </tr>
-                    <tr>
-                      <td>Монитор 15'</td>
-                      <td>2</td>
-                      <td>450 лв.</td>
-                      <td>900 лв.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <td>01.12.2023г. 15:44ч.</td>
-            <td>2300004545</td>
-            <td>Фактура</td>
-            <td>1001,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>1001,00 лв.</td>
-            <td>Венелин Колев</td>
-            <td>0,00 лв.</td>
-            <td>Брой</td>
-            <td>Съни Дайнинг 3 ЕООД</td>
-            <td>0,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>Венелин Колев</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td id="3"><a href="#3">+</a></td>
-            <div id="2300004546" class="content">
-              <div class="close-content">
-                <p><a href="#2300004546">-</a></p>
-              </div>
-              <div class="table-content">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Име на стоката</th>
-                      <th>К-во</th>
-                      <th>Цена</th>
-                      <th>Сума</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Компютър</td>
-                      <td>1</td>
-                      <td>850 лв.</td>
-                      <td>850 лв.</td>
-                    </tr>
-                    <tr>
-                      <td>Монитор 15'</td>
-                      <td>2</td>
-                      <td>450 лв.</td>
-                      <td>900 лв.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <td>01.12.2023г. 15:44ч.</td>
-            <td>2300004546</td>
-            <td>Фактура</td>
-            <td>1001,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>1001,00 лв.</td>
-            <td>Венелин Колев</td>
-            <td>0,00 лв.</td>
-            <td>Брой</td>
-            <td>Съни Дайнинг 3 ЕООД</td>
-            <td>0,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>Венелин Колев</td>
-            <td></td>
-            <td></td>
-          </tr> -->
+            <th>Ново салдо</th> -->
 
-          <tr *ngFor="let user of currentList">
-            <td [id]="user.id"><a [href]="'#' + user.id">+</a></td>
-            <div [id]="user.address.geo.lng" class="content">
-              <div class="close-content">
-                <p><a [href]="'#' + user.address.geo.lng">-</a></p>
-              </div>
-              <div class="table-content">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Име на стоката</th>
-                      <th>К-во</th>
-                      <th>Цена</th>
-                      <th>Сума</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{{ user.address.city }}</td>
-                      <td>{{ user.address.zipcode }}</td>
-                      <td>{{ user.address.street }}</td>
-                      <td>{{ user.address.suite }}</td>
-                    </tr>
-                    <tr>
-                      <td>{{ user.address.city }}</td>
-                      <td>{{ user.address.zipcode }}</td>
-                      <td>{{ user.address.street }}</td>
-                      <td>{{ user.address.suite }}</td>
-                    </tr>
-                    <tr>
-                      <td>{{ user.address.city }}</td>
-                      <td>{{ user.address.zipcode }}</td>
-                      <td>{{ user.address.street }}</td>
-                      <td>{{ user.address.suite }}</td>
-                    </tr>
-                    <tr>
-                      <td>{{ user.address.city }}</td>
-                      <td>{{ user.address.zipcode }}</td>
-                      <td>{{ user.address.street }}</td>
-                      <td>{{ user.address.suite }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <td>{{ user.phone }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.website }}</td>
-            <td>0,00 лв.</td>
-            <td>{{ user.website }}</td>
-            <td>{{ user.name }}</td>
-            <td>0,00 лв.</td>
-            <td>Брой</td>
-            <td>{{ user.email }}</td>
-            <td>0,00 лв.</td>
-            <td>0,00 лв.</td>
-            <td>{{ user.name }}</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tfoot></tfoot>
-      </table>
-    </div>
+      <ng-container matColumnDef="profit">
+        <th mat-header-cell *matHeaderCellDef>Приход</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+      <ng-container matColumnDef="expenditure">
+        <th mat-header-cell *matHeaderCellDef>Разход</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+      <ng-container matColumnDef="nameReceiver">
+        <th mat-header-cell *matHeaderCellDef>Име</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+      <ng-container matColumnDef="oldBalance">
+        <th mat-header-cell *matHeaderCellDef>Старо салдо</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+      <ng-container matColumnDef="newBalance">
+        <th mat-header-cell *matHeaderCellDef>Ново салдо</th>
+        <td mat-cell *matCellDef="let document"></td>
+      </ng-container>
+
+      <tr
+        class="table-header"
+        mat-header-row
+        *matHeaderRowDef="displayedColumns"
+      ></tr>
+      <tr
+        class="table-header"
+        mat-header-row
+        *matHeaderRowDef="[
+          'profit',
+          'expenditure',
+          'nameReceiver',
+          'oldBalance',
+          'newBalance'
+        ]"
+      ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <tr></tr>
+    </table>
   </div>
 </div>

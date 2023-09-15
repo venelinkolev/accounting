@@ -1,4 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html {
+  font: 12px/1.3 Tahoma, sans-serif;
+}
+
+/* * {
+  font-family: Tahoma, sans-serif;
+} */
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font: inherit;
+}
+
+body {
+  background-color: rgb(221, 218, 215);
+}
+
+.main-container {
+  display: flex;
+  /* flex: 1 1 auto; */
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* padding: 0 2em; */
+  height: 100vh;
+  justify-content: space-between;
+}
+
+/* .site {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: space-between;
+} */
+
+.main {
+  flex: 1 1 auto;
+}
+
+/* .main-section {
+  display: flex;
+} */
+
+/* ANGULAR MATIRIAL CHANGES */
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 @media (width < 600px) {
   .nav-bar {
@@ -38,56 +101,3 @@
     display: none;
   }
 }
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-html {
-  font: 12px/1.3 Tahoma, sans-serif;
-}
-
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
-}
-
-body {
-  font: inherit;
-}
-
-body {
-  background-color: rgb(221, 218, 215);
-}
-
-.main-container {
-  display: flex;
-  /* flex: 1 1 auto; */
-  flex-direction: column;
-  flex-wrap: nowrap;
-  /* padding: 0 2em; */
-  height: 100vh;
-  justify-content: space-between;
-}
-
-/* .site {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 100vh;
-  justify-content: space-between;
-} */
-
-.main {
-  flex: 1 0 auto;
-}
-
-/* .main-section {
-  display: flex;
-} */
