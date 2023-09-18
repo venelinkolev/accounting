@@ -60,7 +60,7 @@
   </div>
   <div class="filters">
     <div class="input-fields">
-      <input class="search" placeholder="Търси" />
+      <input class="search" placeholder="Търси" (keyup)="search($event)" />
       <div class="receiver-btn">
         <input class="search" placeholder="Контрагент" />
         <div id="receiver-btn"><button>...</button></div>

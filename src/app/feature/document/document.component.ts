@@ -8,6 +8,47 @@ import {
 import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { IUser, JsonHolderService } from 'src/app/services/json-holder.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+
+export interface UserData {
+  position: string;
+  dateOfSave: string;
+  numberOfDocument: string;
+  documentType: string;
+}
+
+const FRUITS: string[] = [
+  'blueberry',
+  'lychee',
+  'kiwi',
+  'mango',
+  'peach',
+  'lime',
+  'pomegranate',
+  'pineapple',
+];
+const NAMES: string[] = [
+  'Maia',
+  'Asher',
+  'Olivia',
+  'Atticus',
+  'Amelia',
+  'Jack',
+  'Charlotte',
+  'Theodore',
+  'Isla',
+  'Oliver',
+  'Isabella',
+  'Jasper',
+  'Cora',
+  'Levi',
+  'Violet',
+  'Arthur',
+  'Mia',
+  'Thomas',
+  'Elizabeth',
+];
 
 @Component({
   selector: 'app-document',
@@ -16,9 +57,10 @@ import { IUser, JsonHolderService } from 'src/app/services/json-holder.service';
 })
 export class DocumentComponent implements OnInit, AfterViewInit {
   @ViewChild('card') card!: ElementRef;
-  // @Output() clickCard = new EventEmitter();
 
-  dataSource = [];
+  @ViewChild(MatSort) sort!: MatSort;
+  // @Output() clickCard = new EventEmitter();
+  dataSource: MatTableDataSource<UserData>;
 
   userList: IUser[] = [];
   currentList: IUser[] = [];
@@ -27,23 +69,30 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   elementPerPage: number = 4;
   startIndex: number = 0;
 
+  symbolValue: string = '';
+
   displayedColumns: string[] = [
     'position',
     'dateOfSave',
     'numberOfDocument',
     'documentType',
-    'sumDocument',
-    'case',
-    'caseOwner',
-    'nonCashPayment',
-    'paymentMethod',
-    'receiver',
-    'nameOperator',
-    'checked',
-    'note',
+    // 'sumDocument',
+    // 'case',
+    // 'caseOwner',
+    // 'nonCashPayment',
+    // 'paymentMethod',
+    // 'receiver',
+    // 'nameOperator',
+    // 'checked',
+    // 'note',
   ];
 
-  constructor(private userServices: JsonHolderService) {}
+  constructor(private userServices: JsonHolderService) {
+    const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1));
+
+    this.dataSource = new MatTableDataSource(users);
+    console.log(users);
+  }
 
   ngOnInit(): void {
     this.userServices.getPost$().subscribe((list) => {
@@ -75,10 +124,22 @@ export class DocumentComponent implements OnInit, AfterViewInit {
 
       // console.log('2', this.currentList);
     });
+    this.dataSource.sort = this.sort;
 
+    this.userServices.searchSymbol$.subscribe((symbol) => {
+      console.log(symbol);
+      this.symbolValue = symbol;
+      this.dataSource.filter = symbol.trim().toLowerCase();
+    });
     // this.card.nativeElement.classList.add();
     // console.log(this.card);
   }
+
+  // applyFilter(event: Event): void {
+  //   console.log((event.target as HTMLInputElement).value);
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
 
   closeContent(event: any): void {
     const targetElement: Element = event.target;
@@ -132,4 +193,19 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   //     // console.log(element);
   //   });
   // }
+}
+
+function createNewUser(id: number): UserData {
+  const name =
+    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
+    ' ' +
+    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
+    '.';
+
+  return {
+    position: id.toString(),
+    dateOfSave: name,
+    documentType: Math.round(Math.random() * 100).toString(),
+    numberOfDocument: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+  };
 }

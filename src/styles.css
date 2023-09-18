@@ -32,14 +32,21 @@ body {
   background-color: rgb(221, 218, 215);
 }
 
+.nav-bar {
+  background-color: rgb(27, 0, 87);
+  width: 40px;
+  height: 100vh;
+}
+
 .main-container {
   display: flex;
   /* flex: 1 1 auto; */
   flex-direction: column;
   flex-wrap: nowrap;
   /* padding: 0 2em; */
-  height: 100vh;
+  height: auto;
   justify-content: space-between;
+  height: 100vh;
 }
 
 /* .site {
@@ -51,6 +58,7 @@ body {
 } */
 
 .main {
+  overflow: scroll;
   flex: 1 1 auto;
 }
 
@@ -87,6 +95,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
   .site {
     display: flex;
+    position: relative;
   }
 
   .main-container {

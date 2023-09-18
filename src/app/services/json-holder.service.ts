@@ -27,10 +27,12 @@ export interface IUser {
 })
 export class JsonHolderService {
   private _user = new Subject<IUser[]>();
-
+  private _search = new Subject<string>();
   private _pagenation = new BehaviorSubject<number>(0);
 
   pagenation$: Observable<number> = this._pagenation.asObservable();
+
+  searchSymbol$: Observable<string> = this._search.asObservable();
 
   user$: Observable<IUser[]> = this._user.asObservable();
   numberUsers$: Observable<number> = this.user$.pipe(
@@ -51,5 +53,9 @@ export class JsonHolderService {
 
   currentIndex(index: number): void {
     this._pagenation.next(index);
+  }
+
+  currentSearchSymbol(symbol: string): void {
+    this._search.next(symbol);
   }
 }

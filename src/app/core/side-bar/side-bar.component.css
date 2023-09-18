@@ -1,12 +1,8 @@
-.nav-bar {
+.side-bar {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  justify-content: flex-start;
   align-items: center;
-  background-color: rgb(27, 0, 87);
-  width: 40px;
-  height: 100%;
   color: white;
   padding-top: 1em;
 }
