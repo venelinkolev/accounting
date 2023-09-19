@@ -11,6 +11,14 @@ import { IUser, JsonHolderService } from 'src/app/services/json-holder.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+
 export interface UserData {
   position: string;
   dateOfSave: string;
@@ -54,6 +62,17 @@ const NAMES: string[] = [
   selector: 'app-document',
   templateUrl: './document.component.html',
   styleUrls: ['./document.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
+  // standalone: true,
 })
 export class DocumentComponent implements OnInit, AfterViewInit {
   @ViewChild('card') card!: ElementRef;
@@ -86,12 +105,14 @@ export class DocumentComponent implements OnInit, AfterViewInit {
     // 'checked',
     // 'note',
   ];
+  displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
+  expandedElement!: UserData | null;
 
   constructor(private userServices: JsonHolderService) {
     const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1));
 
     this.dataSource = new MatTableDataSource(users);
-    console.log(users);
+    // console.log(users);
   }
 
   ngOnInit(): void {
