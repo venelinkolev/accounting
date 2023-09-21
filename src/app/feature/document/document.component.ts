@@ -85,6 +85,9 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   currentList: IUser[] = [];
   numberUsers: number = 0;
 
+  totalDocumentType: number = 0;
+  totalNumberDocument: number = 0;
+
   elementPerPage: number = 4;
   startIndex: number = 0;
 
@@ -116,6 +119,12 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.totalDocumentType = this.dataSource.data
+      .map((p) => Number(p.documentType))
+      .reduce((acc, value) => acc + value, 0);
+
+    this.totalNumberDocument = this.dataSource.data.length;
+
     this.userServices.getPost$().subscribe((list) => {
       this.userList = list;
       this.userServices.userHolder(list);
@@ -148,12 +157,21 @@ export class DocumentComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
 
     this.userServices.searchSymbol$.subscribe((symbol) => {
-      console.log(symbol);
+      // console.log(symbol);
       this.symbolValue = symbol;
       this.dataSource.filter = symbol.trim().toLowerCase();
+      this.userServices.totalDocumentSum(this.dataSource.filteredData);
     });
+
+    this.totalNumberDocument = this.dataSource.filteredData.length;
+
     // this.card.nativeElement.classList.add();
     // console.log(this.card);
+    this.userServices.totalDoc$.subscribe((sum) => {
+      this.totalDocumentType = sum[0];
+      this.totalNumberDocument = sum[1];
+      // console.log(sum);
+    });
   }
 
   // applyFilter(event: Event): void {
