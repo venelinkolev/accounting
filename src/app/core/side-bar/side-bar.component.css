@@ -42,14 +42,14 @@ svg:hover {
 
 .doc ul li {
   display: inline-block;
-  width: 200px;
-  padding: 0.8em 1em;
 }
 
 .doc ul li a {
+  display: inline-block;
+  width: 200px;
+  padding: 0.8em 1em;
   color: white;
   font-weight: 600;
-  /* font-style: italic; */
   text-decoration: none;
 }
 

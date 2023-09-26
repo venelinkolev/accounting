@@ -20,7 +20,11 @@
   display: inline-block;
 }
 
-.tab-button a {
+.tab-button ul li a.mark-tab-button {
+  background-color: whitesmoke;
+}
+
+.tab-button ul a {
   display: inline-block;
   height: 28px;
   text-decoration: none;
@@ -35,11 +39,7 @@
   background-color: rgb(200, 200, 200);
 }
 
-.tab-button a:hover {
-  background-color: whitesmoke;
-}
-
-.tab-button a:focus {
+.tab-button ul li a:hover {
   background-color: whitesmoke;
 }
 

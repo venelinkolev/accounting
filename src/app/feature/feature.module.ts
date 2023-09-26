@@ -7,9 +7,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { InvoiceDocumentsComponent } from './invoice-documents/invoice-documents.component';
+import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
+import { ProformaInvoiceComponent } from './proforma-invoice/proforma-invoice.component';
 
 @NgModule({
-  declarations: [DocumentComponent],
+  declarations: [
+    DocumentComponent,
+    InvoiceDocumentsComponent,
+    CustomerOrdersComponent,
+    ProformaInvoiceComponent,
+  ],
   imports: [
     CommonModule,
     MatTableModule,

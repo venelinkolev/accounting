@@ -5,10 +5,26 @@ import { FooterComponent } from './footer/footer.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { AppRoutingModule } from '../app-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SideBarComponent],
-  imports: [CommonModule, MatTableModule, MatSortModule],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    MatSortModule,
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [HeaderComponent, FooterComponent, SideBarComponent],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'bg-BG' }],
 })
 export class CoreModule {}

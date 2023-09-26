@@ -115,6 +115,20 @@
   border: 0.1em solid rgb(180, 180, 180);
 }
 
+.datePicker {
+  height: 2.5em;
+  min-width: 15em;
+  background: rgb(255, 255, 255);
+  border-radius: 0.3em;
+  padding: 0.5em 0.7em;
+  font-size: 1.2em;
+  border: 0.1em solid rgb(180, 180, 180);
+}
+
+.datePicker input {
+  margin-bottom: 1em;
+}
+
 .filters-btn button:hover,
 .print-btn button:hover {
   cursor: pointer;
