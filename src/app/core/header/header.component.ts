@@ -4,6 +4,7 @@ import {
   ElementRef,
   OnChanges,
   OnInit,
+  Renderer2,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
@@ -26,9 +27,12 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges {
     endDate: new FormControl(this.currentDate, [Validators.required]),
   });
 
+  @ViewChild('filtersBox') filtersBox!: ElementRef;
+
   constructor(
     private userServices: JsonHolderService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
@@ -55,5 +59,15 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges {
     if (date.value != null) {
       console.log(date.value.toLocaleDateString());
     }
+  }
+
+  closeFiltersBox(): void {
+    // console.log('Close Filters Box');
+    this.renderer.setStyle(this.filtersBox.nativeElement, 'display', 'none');
+  }
+
+  openFiltersBox(): void {
+    // console.log('Open Filters Box');
+    this.renderer.setStyle(this.filtersBox.nativeElement, 'display', 'flex');
   }
 }

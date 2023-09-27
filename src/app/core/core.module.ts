@@ -7,6 +7,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     AppRoutingModule,
     MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
