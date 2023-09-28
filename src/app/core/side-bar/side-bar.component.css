@@ -1,10 +1,55 @@
 .side-bar {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1em;
   align-items: center;
   color: white;
   padding-top: 1em;
+}
+
+.mainMenuOptions,
+.moreOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.moreOptions {
+  justify-content: center;
+  border-top: 2px solid white;
+  height: 250px;
+  width: 100%;
+}
+
+.moreOptions ul li {
+  display: inline-block;
+  padding-left: 10px;
+  width: 40px;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.moreOptions ul li > a {
+  display: none;
+  position: absolute;
+  border-radius: 0 0.5em 0.5em 0;
+  top: -6px;
+  left: 100%;
+  width: 200px;
+  padding: 0.8em 1em;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(27, 0, 87);
+  z-index: 999;
+}
+
+.moreOptions ul li:hover > a {
+  display: inline-block;
 }
 
 svg {
@@ -34,6 +79,7 @@ svg:hover {
   left: 100%;
   z-index: 1000;
   background-color: rgb(27, 0, 87);
+  border-radius: 0 0.5em 0.5em 0;
 }
 
 .doc ul {
@@ -51,13 +97,15 @@ svg:hover {
   color: white;
   font-weight: 600;
   text-decoration: none;
+  border-radius: 0 0.5em 0.5em 0;
 }
 
-.doc ul li:hover {
+.doc ul li a:hover,
+.moreOptions ul li a:hover {
   color: rgb(27, 0, 87);
   background-color: orange;
 }
 
-#refresh {
-  margin-bottom: 3.5em;
-}
+/* #menu-settings {
+  margin-bottom: 4.5em;
+} */

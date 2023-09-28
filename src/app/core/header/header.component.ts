@@ -9,7 +9,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { JsonHolderService } from 'src/app/services/json-holder.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -61,13 +60,17 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges {
     }
   }
 
-  closeFiltersBox(): void {
+  closeFiltersBox(element: HTMLElement): void {
     // console.log('Close Filters Box');
-    this.renderer.setStyle(this.filtersBox.nativeElement, 'display', 'none');
+    this.renderer.setStyle(element, 'display', 'none');
   }
 
-  openFiltersBox(): void {
+  openFiltersBox(element: HTMLElement): void {
     // console.log('Open Filters Box');
-    this.renderer.setStyle(this.filtersBox.nativeElement, 'display', 'flex');
+    this.renderer.setStyle(element, 'display', 'flex');
+  }
+
+  printPage(): void {
+    window.print();
   }
 }

@@ -13,8 +13,9 @@
             /></svg
         ></a>
       </div>
+      <h2>{{ referenceName }}</h2>
       <div id="menu-settings">
-        <a href="#"
+        <a (click)="openFiltersBox(settingsBtn)"
           ><svg
             class="menu-btn"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +25,41 @@
               d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
             /></svg
         ></a>
+        <div #settingsBtn class="doc-mobile" style="display: none">
+          <ul>
+            <li>
+              <a (click)="closeFiltersBox(settingsBtn)" routerLink="/documents"
+                >Документи за продажба</a
+              >
+            </li>
+            <li>
+              <a (click)="closeFiltersBox(settingsBtn)" routerLink="/invoice"
+                >Фактури за продажба</a
+              >
+            </li>
+            <li>
+              <a
+                (click)="closeFiltersBox(settingsBtn)"
+                routerLink="/customer-orders"
+                >Поръчки от клиенти</a
+              >
+            </li>
+            <li>
+              <a
+                (click)="closeFiltersBox(settingsBtn)"
+                routerLink="/proforma-invoice"
+                >Проформа фактури</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
   <div class="reference-name-btns">
     <h1>{{ referenceName }}</h1>
     <div class="print-btn">
-      <button>
+      <button (click)="printPage()">
         <svg
           class="svg-filters"
           xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +132,7 @@
           Период
         </button> -->
       <div id="vertical-line"></div>
-      <button (click)="openFiltersBox()">
+      <button (click)="openFiltersBox(filtersBox)">
         <svg
           class="svg-filters"
           xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +158,7 @@
       <header>
         <div><h1>Филтри</h1></div>
         <div class="closeBoxBtn">
-          <button (click)="closeFiltersBox()">
+          <button (click)="closeFiltersBox(filtersBox)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
               <path
                 d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
@@ -175,7 +204,7 @@
           </mat-form-field>
         </div>
       </main>
-      <footer><button (click)="closeFiltersBox()">Да</button></footer>
+      <footer><button (click)="closeFiltersBox(filtersBox)">Да</button></footer>
     </div>
   </div>
 </div>

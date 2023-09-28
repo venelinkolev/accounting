@@ -11,12 +11,58 @@
   background-color: rgb(27, 0, 87);
   width: 100%;
   height: 40px;
+  position: relative;
+}
+
+.menu > h2 {
+  color: white;
 }
 
 .menu-btn {
   fill: white;
   width: 1.8em;
   height: auto;
+}
+
+.doc-mobile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.4em 0 rgba(0, 0, 0, 0.4);
+  top: 40px;
+  right: 5px;
+  z-index: 999;
+  background-color: white;
+}
+
+.doc-mobile ul {
+  display: inline-block;
+}
+
+.doc-mobile ul li {
+  display: block;
+  border-bottom: 1px solid rgb(27, 0, 87);
+}
+
+.doc-mobile ul li:last-child {
+  border-bottom: none;
+}
+
+.doc-mobile ul li a {
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  padding: 0.8em 1em;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.doc-mobile ul li a:active {
+  background-color: orange;
+  color: white;
 }
 
 /* #menu-back a svg:hover,
