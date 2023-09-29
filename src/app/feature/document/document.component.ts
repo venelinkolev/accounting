@@ -168,10 +168,11 @@ export class DocumentComponent implements OnInit, AfterViewInit {
   }
 
   openContent(event: any): void {
-    event.target.offsetParent.children[3].classList.remove(
-      'content-mobile-none'
-    );
-    event.target.offsetParent.children[3].classList.add('content-mobile');
+    const cardElement = event.target.closest('.card');
+
+    cardElement.children[3].classList.remove('content-mobile-none');
+
+    cardElement.children[3].classList.add('content-mobile');
   }
 }
 
