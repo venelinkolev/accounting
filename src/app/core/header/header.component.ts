@@ -26,8 +26,9 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges {
     endDate: new FormControl(this.currentDate, [Validators.required]),
   });
 
-  @ViewChild('filtersBox') filtersBox!: ElementRef;
+  // @ViewChild('filtersBox') filtersBox!: ElementRef;
 
+  isOpenFiltersBox: boolean = false;
   constructor(
     private userServices: JsonHolderService,
     private sharedService: SharedService,
@@ -58,6 +59,11 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges {
     if (date.value != null) {
       console.log(date.value.toLocaleDateString());
     }
+  }
+
+  isOpenFiltersBoxChange(event: boolean): void {
+    // console.log(event);
+    this.isOpenFiltersBox = event;
   }
 
   closeFiltersBox(element: HTMLElement): void {

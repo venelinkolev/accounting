@@ -1,0 +1,48 @@
+.document-content-table {
+  padding: 0.3em;
+  border-radius: 0.5em;
+  border: 2px solid #999;
+  width: 100%;
+  background: white;
+  overflow: auto;
+}
+
+.document-content-table th {
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 0.4em;
+}
+
+.document-content-table tr {
+  height: 25px;
+}
+
+td.mat-mdc-cell {
+  border-right: 1px solid rgb(224, 224, 224);
+}
+
+.document-content-table td:nth-child(3) {
+  text-align: left;
+}
+
+.nameItems {
+  min-width: 250px;
+}
+
+tr.mat-mdc-footer-row {
+  font-weight: bold;
+}
+
+.mat-mdc-table-sticky {
+  border-top: 2px solid #e0e0e0;
+}
+
+.document-content-table td {
+  text-align: right;
+}
+
+.document-content-table td:first-child {
+  text-align: left;
+}

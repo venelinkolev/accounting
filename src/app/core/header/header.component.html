@@ -119,92 +119,24 @@
       </div>
       <mat-datepicker-toggle matIconSuffix [for]="picker">
       </mat-datepicker-toggle>
-      <!-- <button id="date-period">
+      <div id="vertical-line"></div>
+      <div>
+        <button (click)="isOpenFiltersBox = true">
           <svg
             class="svg-filters"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
+            viewBox="0 0 512 512"
           >
             <path
-              d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-            />
-          </svg>
-          Период
-        </button> -->
-      <div id="vertical-line"></div>
-      <button (click)="openFiltersBox(filtersBox)">
-        <svg
-          class="svg-filters"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-        >
-          <path
-            d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"
-          /></svg
-        >Филтри
-      </button>
-      <!-- <button>
-        <svg
-          class="svg-filters"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 576 512"
-        ><path
-            d="M151.6 469.6C145.5 476.2 137 480 128 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L96 365.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32V365.7l32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 480c-17.7 0-32-14.3-32-32s14.3-32 32-32h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H320zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H320zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H320zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H320z"
-          /></svg
-        >Сортирай
-      </button> -->
-    </div>
-    <div #filtersBox class="filters-box" style="display: none">
-      <header>
-        <div><h1>Филтри</h1></div>
-        <div class="closeBoxBtn">
-          <button (click)="closeFiltersBox(filtersBox)">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-              <path
-                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-              />
-            </svg>
-          </button>
-        </div>
-      </header>
-      <main>
-        <h2>Часови период</h2>
-        <hr />
-        <div class="time-period">
-          <mat-form-field appearance="fill">
-            <mat-label>Начален час:</mat-label>
-            <input matInput placeholder="00:00" />
-            <mat-icon matSuffix>access_time</mat-icon>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Краен час:</mat-label>
-            <input matInput placeholder="23:59" />
-            <mat-icon matSuffix>access_time</mat-icon>
-          </mat-form-field>
-        </div>
-        <h2>Документ</h2>
-        <hr />
-        <div class="document-filters">
-          <mat-form-field appearance="outline">
-            <mat-label>Филтър по склад</mat-label>
-            <input matInput placeholder="Филтър по склад" />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Филтър по оператор</mat-label>
-            <input matInput placeholder="Филтър по оператор" />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Филтър по пласьор</mat-label>
-            <input matInput placeholder="Филтър по пласьор" />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Филтър по търговски представител</mat-label>
-            <input matInput placeholder="Филтър по търговски представител" />
-          </mat-form-field>
-        </div>
-      </main>
-      <footer><button (click)="closeFiltersBox(filtersBox)">Да</button></footer>
+              d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"
+            /></svg
+          >Филтри
+        </button>
+        <app-filters-box
+          (isOpenFiltersBoxChange)="isOpenFiltersBoxChange($event)"
+          *ngIf="isOpenFiltersBox"
+        ></app-filters-box>
+      </div>
     </div>
   </div>
 </div>
