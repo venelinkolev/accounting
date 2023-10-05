@@ -58,8 +58,6 @@ const NAMES: string[] = [
   styleUrls: ['./document.component.css'],
 })
 export class DocumentComponent implements OnInit, AfterViewInit {
-  @ViewChild('card') card!: ElementRef;
-
   @ViewChild(MatSort) sort!: MatSort;
   dataSource: MatTableDataSource<UserData>;
 
@@ -145,34 +143,6 @@ export class DocumentComponent implements OnInit, AfterViewInit {
       this.totalDocumentType = sum[0];
       this.totalNumberDocument = sum[1];
     });
-  }
-
-  closeContent(event: any): void {
-    const targetElement: Element = event.target;
-
-    if (targetElement.nodeName === 'path') {
-      targetElement.parentElement?.parentElement?.parentElement?.classList.add(
-        'content-mobile-none'
-      );
-      targetElement.parentElement?.parentElement?.parentElement?.classList.remove(
-        'content-mobile'
-      );
-    } else if (targetElement.nodeName === 'svg') {
-      targetElement.parentElement?.parentElement?.classList.add(
-        'content-mobile-none'
-      );
-      targetElement.parentElement?.parentElement?.classList.remove(
-        'content-mobile'
-      );
-    }
-  }
-
-  openContent(event: any): void {
-    const cardElement = event.target.closest('.card');
-
-    cardElement.children[3].classList.remove('content-mobile-none');
-
-    cardElement.children[3].classList.add('content-mobile');
   }
 }
 

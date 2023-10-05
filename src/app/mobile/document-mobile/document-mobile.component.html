@@ -1,0 +1,184 @@
+<div (click)="openContent($event)" class="card">
+  <header class="card-header">
+    <div class="date">
+      <p>
+        <b
+          >01.12.2023 г.<br />
+          12:45:00 ч.</b
+        >
+      </p>
+    </div>
+    <div class="type-doc">
+      <h3>Фактура</h3>
+    </div>
+    <div class="number-doc">
+      <p><b>№2300004558</b></p>
+    </div>
+  </header>
+  <main class="card-main">
+    <div class="payment-method">
+      <div class="payment-method-row">
+        <label><i>Начин на плащане</i></label>
+        <p><b>Брой</b></p>
+      </div>
+      <div class="sum-doc-dds">
+        <label><i>Сума на докимента /ДДС/</i></label>
+        <p><b>1010,98 лв.</b></p>
+      </div>
+    </div>
+    <div class="receiver">
+      <div class="receiver-row">
+        <p><i>Контрагент</i></p>
+      </div>
+      <div class="balance">
+        <div class="old-balance">
+          <label><i>Старо салдо</i></label>
+          <p><b>0,00 лв.</b></p>
+        </div>
+        <div class="new-balance">
+          <label><i>Ново сладо</i></label>
+          <p><b>1110,00 лв.</b></p>
+        </div>
+      </div>
+      <div class="receiver-name">
+        <p><b>Съни Дайнинг 3 ЕООД</b></p>
+      </div>
+    </div>
+    <div class="case">
+      <div class="case-name">
+        <p>Каса</p>
+      </div>
+      <div class="case-balance">
+        <p><i>Приход:</i> <b> 100,00 лв.</b></p>
+        <p><i>Разход:</i> <b> 0.00 лв.</b></p>
+      </div>
+    </div>
+    <div class="non-cash-payment">
+      <div class="non-cash-payment-name">
+        <p>Безналично плащане</p>
+      </div>
+      <div class="non-cash-payment-method">
+        <div class="non-cash-payment-method-name">
+          <p><i>Карта</i></p>
+        </div>
+        <div class="non-cash-payment-sum">
+          <p><b>100,00 лв.</b></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="card-footer">
+    <div class="name-employer">
+      <label><i>Касиер</i></label>
+      <p>Венелин Колев</p>
+    </div>
+    <div class="name-operator">
+      <label><i>Оператор</i></label>
+      <p>Венелин Колев</p>
+    </div>
+  </footer>
+  <div (click)="$event.stopPropagation()" class="content-mobile-none">
+    <div class="header-content">
+      <h2>Съдържание</h2>
+      <svg
+        (click)="closeContent($event); $event.stopPropagation()"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 384 512"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+        />
+      </svg>
+    </div>
+    <section class="main-content">
+      <header>
+        <h3>Чип и Дейл ООД</h3>
+        <p>Фактура №2300004558/ 30.09.2023 10:23 <span> в брой</span></p>
+      </header>
+      <main>
+        <div class="row-document">
+          <header>
+            <p>№ 1</p>
+            <h4>Абонамент до 31.12.2023 г.</h4>
+          </header>
+          <div class="row-document-table">
+            <p>2 <span>x</span> <span> 180000,00 лв</span></p>
+            <p>360000,00 лв</p>
+          </div>
+        </div>
+        <div class="row-document">
+          <header>
+            <p>№ 2</p>
+            <h4>Абонамент до 31.12.2023 г.</h4>
+          </header>
+          <div class="row-document-table">
+            <p>2 <span>x</span> <span> 180000,00 лв</span></p>
+            <p>360000,00 лв</p>
+          </div>
+        </div>
+        <div class="row-document">
+          <header>
+            <p>№ 3</p>
+            <h4>Абонамент до 31.12.2023 г. {{ user.email }}</h4>
+          </header>
+          <div class="row-document-table">
+            <p>2 <span>x</span> <span> 180000,00 лв</span></p>
+            <p>360000,00 лв</p>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>3</p>
+        <h4>Обща сума: 100,00 лв.</h4>
+      </footer>
+    </section>
+    <div class="footer-content">
+      <ul>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+            />
+          </svg>
+          <p>Печат на POS принтер</p>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V304H176c-35.3 0-64 28.7-64 64V512H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM176 352h32c30.9 0 56 25.1 56 56s-25.1 56-56 56H192v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V448 368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H192v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H320v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V432 368z"
+            />
+          </svg>
+          <p>PDF файл</p>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM288 368a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm211.3-43.3c-6.2-6.2-16.4-6.2-22.6 0L416 385.4l-28.7-28.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l40 40c6.2 6.2 16.4 6.2 22.6 0l72-72c6.2-6.2 6.2-16.4 0-22.6z"
+            />
+          </svg>
+          <p>Печат на фискален бон</p>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM288 368a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm224 0c0-8.8-7.2-16-16-16H368c-8.8 0-16 7.2-16 16s7.2 16 16 16H496c8.8 0 16-7.2 16-16z"
+            />
+          </svg>
+          <p>Сторниране на документ</p>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zm48 96a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm59.3 107.3c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L432 345.4l-36.7-36.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L409.4 368l-36.7 36.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L432 390.6l36.7 36.7c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6L454.6 368l36.7-36.7z"
+            />
+          </svg>
+          <p>Анулиране на документ</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

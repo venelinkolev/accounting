@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { InvoiceDocumentsComponent } from './invoice-documents/invoice-documents.component';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 import { ProformaInvoiceComponent } from './proforma-invoice/proforma-invoice.component';
+import { MobileModule } from '../mobile/mobile.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProformaInvoiceComponent } from './proforma-invoice/proforma-invoice.co
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MobileModule,
   ],
   exports: [DocumentComponent],
 })
