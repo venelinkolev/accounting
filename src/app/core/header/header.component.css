@@ -140,7 +140,7 @@
 
 .filters-btn {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 0.5em;
   justify-content: space-between;
   align-items: center;
@@ -208,7 +208,7 @@
   }
 
   .search {
-    min-width: 200px;
+    max-width: 160px;
   }
 }
 

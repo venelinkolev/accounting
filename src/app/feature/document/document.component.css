@@ -10,11 +10,23 @@
   .mobile-view {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 600px) and (width < 1020px) {
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
+
+@media (width >= 1020px) {
   .desktop-view {
     display: block;
   }
