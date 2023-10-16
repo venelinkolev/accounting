@@ -195,7 +195,28 @@
   }
 }
 
-@media (width >= 600px) {
+@media (width >= 600px) and (width < 1020px) {
+  .reference-name-btns {
+    display: none;
+  }
+
+  .filters {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0 0.5em;
+  }
+
+  .search {
+    min-width: 200px;
+  }
+}
+
+@media (width >= 1020px) {
+  .nav-mobile {
+    display: none;
+  }
+
   .filters {
     flex-direction: row;
     height: 60px;

@@ -27,67 +27,7 @@ body {
   background-color: rgb(230, 230, 230);
 }
 
-.nav-bar {
-  background-color: rgb(27, 0, 87);
-  width: 40px;
-  height: 100vh;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  height: auto;
-  justify-content: space-between;
-  height: 100vh;
-}
-
-.main {
-  overflow: scroll;
-  flex: 1 1 auto;
-}
-
 /* ANGULAR MATIRIAL CHANGES */
 
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
-
-@media (width < 600px) {
-  .nav-bar {
-    display: none;
-  }
-
-  .desktop-view {
-    display: none;
-  }
-
-  .mobile-view {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    /* align-items: center; */
-  }
-}
-
-@media (width >= 600px) {
-  .nav-mobile {
-    display: none;
-  }
-
-  .site {
-    display: flex;
-    position: relative;
-  }
-
-  .main-container {
-    flex: 1 0 auto;
-  }
-
-  .desktop-view {
-    display: block;
-  }
-
-  .mobile-view {
-    display: none;
-  }
-}

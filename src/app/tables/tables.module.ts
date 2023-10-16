@@ -5,9 +5,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MainTableComponent } from './main-table/main-table.component';
 
 @NgModule({
-  declarations: [DocumentContentComponent],
+  declarations: [DocumentContentComponent, MainTableComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -15,6 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
     MatSortModule,
     MatIconModule,
   ],
-  exports: [DocumentContentComponent],
+  exports: [DocumentContentComponent, MainTableComponent],
 })
 export class TablesModule {}

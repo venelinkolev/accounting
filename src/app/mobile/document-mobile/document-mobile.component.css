@@ -72,6 +72,7 @@
   flex: 1 1 auto;
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5em;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid gray;
@@ -81,20 +82,13 @@
 
 .balance {
   flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-}
-
-.old-balance,
-.new-balance {
-  text-align: center;
+  text-align: end;
   line-height: 1.4em;
 }
 
 .receiver-name {
-  width: 120px;
-  text-align: end;
+  flex: 1 1 auto;
+  text-align: center;
 }
 
 /* Case */

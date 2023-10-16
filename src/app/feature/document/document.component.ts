@@ -144,6 +144,10 @@ export class DocumentComponent implements OnInit, AfterViewInit {
       this.totalNumberDocument = sum[1];
     });
   }
+
+  sortTable(event: MatSort) {
+    this.sort = event;
+  }
 }
 
 function createNewUser(id: number): UserData {

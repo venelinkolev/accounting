@@ -125,7 +125,17 @@
   }
 }
 
-@media (width >= 600px) {
+@media (width >= 600px) and (width < 1020px) {
+  .documentContent {
+    display: none;
+  }
+
+  .tab-button {
+    display: none;
+  }
+}
+
+@media (width >= 1020px) {
   .container {
     display: none;
   }

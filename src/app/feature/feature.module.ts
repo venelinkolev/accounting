@@ -11,6 +11,7 @@ import { InvoiceDocumentsComponent } from './invoice-documents/invoice-documents
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 import { ProformaInvoiceComponent } from './proforma-invoice/proforma-invoice.component';
 import { MobileModule } from '../mobile/mobile.module';
+import { TablesModule } from '../tables/tables.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MobileModule } from '../mobile/mobile.module';
     MatButtonModule,
     MatIconModule,
     MobileModule,
+    TablesModule,
   ],
   exports: [DocumentComponent],
 })
