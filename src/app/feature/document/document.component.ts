@@ -88,6 +88,7 @@ export class DocumentComponent implements OnInit, AfterViewInit {
     // 'checked',
     // 'note',
   ];
+
   displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
   expandedElement!: UserData | null;
 
@@ -113,10 +114,11 @@ export class DocumentComponent implements OnInit, AfterViewInit {
       this.userList = list;
       this.userServices.userHolder(list);
 
-      this.currentList = this.userList.slice(
-        this.startIndex,
-        this.startIndex + this.elementPerPage
-      );
+      this.currentList = this.userList;
+      // .slice(
+      //   this.startIndex,
+      //   this.startIndex + this.elementPerPage
+      // );
     });
   }
 

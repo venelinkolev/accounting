@@ -88,6 +88,19 @@ export class FooterComponent implements OnInit, AfterViewInit {
     'quantityStorage',
   ];
 
+  pieChartLabelsPayment = ['Каса', 'Банка', 'Карта'];
+  pieChartDatasetsPayment = [
+    {
+      data: [300.5, 500.6, 100.8],
+    },
+  ];
+
+  pieChartLabelsDocumentType = ['Разписка', 'Фактура', 'Стокова разписка'];
+  pieChartDatasetsDocumentType = [
+    {
+      data: [150, 50, 35],
+    },
+  ];
   constructor(private userServices: JsonHolderService) {}
 
   ngOnInit(): void {}

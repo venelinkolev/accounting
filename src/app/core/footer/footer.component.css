@@ -1,8 +1,9 @@
 .documentContent {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 2rem;
   width: 100%;
   height: 200px;
   overflow-y: scroll;
@@ -47,21 +48,31 @@
   margin: 0.5em;
 }
 
+.charts {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
 .container {
   display: flex;
-  justify-content: flex-start;
-  gap: 2em;
+  justify-content: space-between;
   background-color: rgb(200, 200, 200);
   width: 100%;
   height: 40px;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   align-items: center;
   border-top: 1px solid rgb(170, 170, 170);
-}
-
-.footer {
   color: black;
   font-weight: bold;
+}
+
+.container section:last-child {
+  text-align: end;
+}
+
+.container section:nth-child(3) {
+  text-align: center;
 }
 
 .page {
@@ -83,7 +94,7 @@
   background: none;
 }
 
-#vertical-line {
+.vertical-line {
   border: 1px solid gray;
   height: 2em;
 }
@@ -112,10 +123,6 @@
     display: none;
   }
 
-  .container {
-    justify-content: space-between;
-    padding: 0 2em;
-  }
   .page {
     margin: 0;
   }

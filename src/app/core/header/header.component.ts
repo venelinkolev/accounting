@@ -72,8 +72,11 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   openFiltersBox(element: HTMLElement): void {
-    // console.log('Open Filters Box');
-    this.renderer.setStyle(element, 'display', 'flex');
+    if (element.style.cssText.slice(-5) == 'flex;') {
+      this.renderer.setStyle(element, 'display', 'none');
+    } else {
+      this.renderer.setStyle(element, 'display', 'flex');
+    }
   }
 
   printPage(): void {

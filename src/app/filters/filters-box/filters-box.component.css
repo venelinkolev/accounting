@@ -97,7 +97,7 @@ hr {
 
 @media (width >= 600px) and (width < 1020px) {
   .filters-box {
-    width: 380px;
+    width: 450px;
     height: 300px;
     top: 45px;
     right: 6px;

@@ -14,6 +14,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TablesModule } from '../tables/tables.module';
 import { FiltersModule } from '../filters/filters.module';
+import { ChartsModule } from '../charts/charts.module';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SideBarComponent],
@@ -31,6 +32,7 @@ import { FiltersModule } from '../filters/filters.module';
     ReactiveFormsModule,
     TablesModule,
     FiltersModule,
+    ChartsModule,
   ],
   exports: [HeaderComponent, FooterComponent, SideBarComponent],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'bg-BG' }],
