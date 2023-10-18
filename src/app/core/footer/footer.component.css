@@ -51,7 +51,7 @@
 .charts {
   display: flex;
   padding: 1rem;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .container {

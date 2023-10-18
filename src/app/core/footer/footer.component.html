@@ -3,14 +3,8 @@
     <app-document-content [dataSource]="dataSource"></app-document-content>
   </div>
   <div class="charts">
-    <app-pie-chart
-      [pieChartLabels]="pieChartLabelsPayment"
-      [pieChartDatasets]="pieChartDatasetsPayment"
-    ></app-pie-chart>
-    <app-pie-chart
-      [pieChartLabels]="pieChartLabelsDocumentType"
-      [pieChartDatasets]="pieChartDatasetsDocumentType"
-    ></app-pie-chart>
+    <app-pie-chart [pieChartData]="pieChartDataPayment"></app-pie-chart>
+    <app-pie-chart [pieChartData]="pieChartDataDocumentType"></app-pie-chart>
   </div>
 </section>
 <div class="tab-button">

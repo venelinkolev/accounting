@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ChartData } from 'chart.js';
 import { JsonHolderService } from 'src/app/services/json-holder.service';
 
 export interface Data {
@@ -88,19 +89,30 @@ export class FooterComponent implements OnInit, AfterViewInit {
     'quantityStorage',
   ];
 
-  pieChartLabelsPayment = ['Каса', 'Банка', 'Карта'];
-  pieChartDatasetsPayment = [
-    {
-      data: [300.5, 500.6, 100.8],
-    },
-  ];
+  pieChartDataPayment: ChartData<'pie', number[], string | string[]> = {
+    labels: ['Каса', 'Банка', 'Карта'],
+    datasets: [
+      {
+        data: [300.5, 500.6, 100.8],
+      },
+    ],
+  };
 
-  pieChartLabelsDocumentType = ['Разписка', 'Фактура', 'Стокова разписка'];
-  pieChartDatasetsDocumentType = [
-    {
-      data: [150, 50, 35],
-    },
-  ];
+  pieChartDataDocumentType: ChartData<'pie', number[], string | string[]> = {
+    labels: ['Разписка', 'Фактура', 'Стокова разписка'],
+    datasets: [
+      {
+        data: [150, 50, 35],
+      },
+    ],
+  };
+
+  // pieChartLabelsPayment = ['Каса', 'Банка', 'Карта'];
+  // pieChartDatasetsPayment = [300.5, 500.6, 100.8];
+
+  // pieChartLabelsDocumentType = ['Разписка', 'Фактура', 'Стокова разписка'];
+  // pieChartDatasetsDocumentType = [150, 50, 35];
+
   constructor(private userServices: JsonHolderService) {}
 
   ngOnInit(): void {}
