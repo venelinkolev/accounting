@@ -1,0 +1,120 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-section {
+  display: flex;
+  background: white;
+  justify-content: space-between;
+  padding: 1.5em 3em;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.logo img {
+  display: block;
+  height: 35px;
+}
+
+.logo h2 {
+  color: rgb(27, 0, 87);
+}
+
+.nav-bar {
+  display: flex;
+  gap: 1em;
+}
+
+.nav-bar ul {
+  display: flex;
+}
+
+.nav-bar li,
+.nav-bar a {
+  display: block;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: rgb(27, 0, 87);
+  padding: 0 1em;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-bar a:hover {
+  color: orange;
+}
+
+.profil span {
+  display: none;
+}
+
+.profil svg {
+  fill: rgb(27, 0, 87);
+  height: 1.8em;
+}
+
+.main-section {
+  display: flex;
+  height: 100%;
+}
+
+.main-section .aside-section {
+  width: 16.7em;
+  background: rgb(27, 0, 87);
+}
+
+.aside-nav {
+  padding: 3em 0;
+  padding-left: 1em;
+  overflow: hidden;
+}
+
+.aside-nav nav > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+.aside-nav nav li,
+.aside-nav nav a {
+  display: block;
+}
+
+.aside-nav nav ul li > a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  width: 15em;
+  /* background-color: white; */
+  /* border: 1px solid white; */
+  border-radius: 5em 0 0 5em;
+  padding: 1em 0 1em 1em;
+}
+
+.aside-nav nav ul li .dashboard {
+  background-color: white;
+  color: rgb(27, 0, 87);
+}
+
+.main-section .routing-section {
+  background: rgb(221, 221, 228);
+  background: linear-gradient(
+    180deg,
+    rgba(221, 221, 228, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  flex: 1 1 auto;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3) inset;
+}
